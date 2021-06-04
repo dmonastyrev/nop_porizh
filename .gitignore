@@ -223,3 +223,6 @@ src/packages/*
 
 # dev app settings for KK
 /src/NopCustomizations/UpdatedPlugins/Nop.Plugin.Misc.KenticoKontent/appsettings.dev.json
+
+# publish folder
+!/published/*
