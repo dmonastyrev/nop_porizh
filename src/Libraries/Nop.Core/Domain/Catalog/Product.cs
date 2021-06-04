@@ -308,7 +308,7 @@ namespace Nop.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets the stock quantity
         /// </summary>
-        public int StockQuantity { get; set; }
+        public decimal StockQuantity { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to display stock availability
@@ -323,7 +323,7 @@ namespace Nop.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets the minimum stock quantity
         /// </summary>
-        public int MinStockQuantity { get; set; }
+        public decimal MinStockQuantity { get; set; }
 
         /// <summary>
         /// Gets or sets the low stock activity identifier
@@ -348,12 +348,12 @@ namespace Nop.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets the order minimum quantity
         /// </summary>
-        public int OrderMinimumQuantity { get; set; }
+        public decimal OrderMinimumQuantity { get; set; }
 
         /// <summary>
         /// Gets or sets the order maximum quantity
         /// </summary>
-        public int OrderMaximumQuantity { get; set; }
+        public decimal OrderMaximumQuantity { get; set; }
 
         /// <summary>
         /// Gets or sets the comma separated list of allowed quantities. null or empty if any quantity is allowed

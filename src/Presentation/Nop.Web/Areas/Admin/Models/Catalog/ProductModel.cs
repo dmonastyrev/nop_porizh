@@ -252,9 +252,9 @@ namespace Nop.Web.Areas.Admin.Models.Catalog
         public IList<SelectListItem> AvailableWarehouses { get; set; }
 
         [NopResourceDisplayName("Admin.Catalog.Products.Fields.StockQuantity")]
-        public int StockQuantity { get; set; }
+        public decimal StockQuantity { get; set; }
 
-        public int LastStockQuantity { get; set; }
+        public decimal LastStockQuantity { get; set; }
 
         [NopResourceDisplayName("Admin.Catalog.Products.Fields.StockQuantity")]
         public string StockQuantityStr { get; set; }

@@ -289,7 +289,7 @@ namespace Nop.Web.Controllers
         /// <returns>A task that represents the asynchronous operation</returns>
         protected virtual async Task SaveItemAsync(ShoppingCartItem updatecartitem, List<string> addToCartWarnings, Product product,
            ShoppingCartType cartType, string attributes, decimal customerEnteredPriceConverted, DateTime? rentalStartDate,
-           DateTime? rentalEndDate, int quantity)
+           DateTime? rentalEndDate, decimal quantity)
         {
             if (updatecartitem == null)
             {

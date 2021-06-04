@@ -30,7 +30,7 @@ namespace Nop.Web.Areas.Admin.Models.Catalog
         public string AttributesXml { get; set; }
 
         [NopResourceDisplayName("Admin.Catalog.Products.ProductAttributes.AttributeCombinations.Fields.StockQuantity")]
-        public int StockQuantity { get; set; }
+        public decimal StockQuantity { get; set; }
 
         [NopResourceDisplayName("Admin.Catalog.Products.ProductAttributes.AttributeCombinations.Fields.AllowOutOfStockOrders")]
         public bool AllowOutOfStockOrders { get; set; }
@@ -55,7 +55,7 @@ namespace Nop.Web.Areas.Admin.Models.Catalog
         public int PictureId { get; set; }
 
         [NopResourceDisplayName("Admin.Catalog.Products.ProductAttributes.AttributeCombinations.Fields.MinStockQuantity")]
-        public int MinStockQuantity { get; set; }
+        public decimal MinStockQuantity { get; set; }
 
         public string PictureThumbnailUrl { get; set; }
 

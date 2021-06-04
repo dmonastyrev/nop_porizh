@@ -130,7 +130,7 @@ namespace Nop.Services.Catalog
         /// <param name="product">Product</param>
         /// <param name="form">Form</param>
         /// <returns>Customer entered price of the product</returns>
-        int ParseEnteredQuantity(Product product, IFormCollection form);
+        decimal ParseEnteredQuantity(Product product, IFormCollection form);
 
         //TODO: migrate to an extension method
         /// <summary>

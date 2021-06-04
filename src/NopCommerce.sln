@@ -61,6 +61,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nop.Tests", "Tests\Nop.Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nop.Plugin.Widgets.AccessiBe", "Plugins\Nop.Plugin.Widgets.AccessiBe\Nop.Plugin.Widgets.AccessiBe.csproj", "{80CEF733-A369-4854-823D-847DFD5D8D87}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{178A3EE3-7230-4F78-A170-ADFB511D44C9}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Stock_To_Decimal.sql = Scripts\Stock_To_Decimal.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

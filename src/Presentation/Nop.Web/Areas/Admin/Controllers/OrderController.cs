@@ -1248,7 +1248,7 @@ namespace Nop.Web.Areas.Admin.Controllers
                 unitPriceInclTax = orderItem.UnitPriceInclTax;
             if (!decimal.TryParse(form["pvUnitPriceExclTax" + orderItemId], out var unitPriceExclTax))
                 unitPriceExclTax = orderItem.UnitPriceExclTax;
-            if (!int.TryParse(form["pvQuantity" + orderItemId], out var quantity))
+            if (!decimal.TryParse(form["pvQuantity" + orderItemId], out var quantity))
                 quantity = orderItem.Quantity;
             if (!decimal.TryParse(form["pvDiscountInclTax" + orderItemId], out var discountInclTax))
                 discountInclTax = orderItem.DiscountAmountInclTax;
@@ -2016,11 +2016,11 @@ namespace Nop.Web.Areas.Admin.Controllers
                 if (maxQtyToAdd <= 0)
                     continue;
 
-                var qtyToAdd = 0; //parse quantity
+                var qtyToAdd = 0M; //parse quantity
                 foreach (var formKey in form.Keys)
                     if (formKey.Equals($"qtyToAdd{orderItem.Id}", StringComparison.InvariantCultureIgnoreCase))
                     {
-                        int.TryParse(form[formKey], out qtyToAdd);
+                        decimal.TryParse(form[formKey], out qtyToAdd);
                         break;
                     }
 

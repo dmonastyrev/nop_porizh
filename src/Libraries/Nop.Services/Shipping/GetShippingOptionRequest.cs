@@ -125,7 +125,7 @@ namespace Nop.Services.Shipping
                 if (OverriddenQuantity.HasValue)
                     return OverriddenQuantity.Value;
 
-                return ShoppingCartItem.Quantity;
+                return (int)ShoppingCartItem.Quantity;
             }
         }
 

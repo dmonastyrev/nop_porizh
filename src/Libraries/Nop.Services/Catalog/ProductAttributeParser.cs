@@ -915,18 +915,18 @@ namespace Nop.Services.Catalog
         /// <param name="product">Product</param>
         /// <param name="form">Form</param>
         /// <returns>Customer entered price of the product</returns>
-        public virtual int ParseEnteredQuantity(Product product, IFormCollection form)
+        public virtual decimal ParseEnteredQuantity(Product product, IFormCollection form)
         {
             if (product == null)
                 throw new ArgumentNullException(nameof(product));
             if (form == null)
                 throw new ArgumentNullException(nameof(form));
 
-            var quantity = 1;
+            var quantity = 1M;
             foreach (var formKey in form.Keys)
                 if (formKey.Equals($"addtocart_{product.Id}.EnteredQuantity", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    int.TryParse(form[formKey], out quantity);
+                    decimal.TryParse(form[formKey], out quantity);
                     break;
                 }
 
