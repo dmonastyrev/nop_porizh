@@ -923,10 +923,14 @@ namespace Nop.Services.Catalog
                 throw new ArgumentNullException(nameof(form));
 
             var quantity = 1M;
+            var decimalSeparator = CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator;
             foreach (var formKey in form.Keys)
                 if (formKey.Equals($"addtocart_{product.Id}.EnteredQuantity", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    decimal.TryParse(form[formKey], out quantity);
+                    var value = form[formKey].ToString();
+                    value = value.Replace(",", decimalSeparator).Replace(".", decimalSeparator);
+
+                    decimal.TryParse(value, out quantity);
                     break;
                 }
 
