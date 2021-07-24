@@ -1,0 +1,49 @@
+﻿.input-group 
+{
+    padding-right: 10px;
+    height: 42px;
+}
+
+  .input-group{
+      width: 194px;
+  }
+
+  .input-group input[type="text"] {
+    width: 100px;
+    height: 100%;
+    border-color: black;
+    border-left: 0px;
+    border-right: 0px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .input-group #decreaseQuantity {
+    float: left;
+    width: 42px;
+    height: 100%;
+  }
+    .input-group #decreaseQuantity button {
+      width: 100%;
+      height: 100%;
+      font-size: 26px;
+    }
+
+  .input-group #increaseQuantity {
+    float: right;
+    width: 42px;
+    height: 100%;
+  }
+    .input-group #increaseQuantity button {
+      width: 100%;
+      height: 100%;
+      font-size: 26px;
+    }
+
+.cart td.quantity {
+    min-width: 150px;
+}
+
+  .cart td.quantity input[type="text"] {
+    width: 100px;
+  }
