@@ -64,6 +64,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{178A3EE3-7230-4F78-A170-ADFB511D44C9}"
 	ProjectSection(SolutionItems) = preProject
 		Scripts\20210724093912-Stock_To_Decimal.sql = Scripts\20210724093912-Stock_To_Decimal.sql
+		Scripts\20210724152614-Add_ProductMethodType.sql = Scripts\20210724152614-Add_ProductMethodType.sql
 	EndProjectSection
 EndProject
 Global

@@ -1454,6 +1454,9 @@ namespace Nop.Services.ExportImport
                         case "ManageInventoryMethod":
                             product.ManageInventoryMethodId = property.IntValue;
                             break;
+                        case "ManageProductType":
+                            product.ManageProductTypeId = property.IntValue;
+                            break;
                         case "ProductAvailabilityRange":
                             product.ProductAvailabilityRangeId = property.IntValue;
                             break;

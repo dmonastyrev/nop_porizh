@@ -1002,6 +1002,7 @@ namespace Nop.Services.ExportImport
                 await xmlWriter.WriteStringAsync("TaxCategoryId", product.TaxCategoryId);
                 await xmlWriter.WriteStringAsync("IsTelecommunicationsOrBroadcastingOrElectronicServices", product.IsTelecommunicationsOrBroadcastingOrElectronicServices, await IgnoreExportProductPropertyAsync(p => p.TelecommunicationsBroadcastingElectronicServices));
                 await xmlWriter.WriteStringAsync("ManageInventoryMethodId", product.ManageInventoryMethodId);
+                await xmlWriter.WriteStringAsync("ManageProductTypeId", product.ManageProductTypeId);
                 await xmlWriter.WriteStringAsync("ProductAvailabilityRangeId", product.ProductAvailabilityRangeId, await IgnoreExportProductPropertyAsync(p => p.ProductAvailabilityRange));
                 await xmlWriter.WriteStringAsync("UseMultipleWarehouses", product.UseMultipleWarehouses, await IgnoreExportProductPropertyAsync(p => p.UseMultipleWarehouses));
                 await xmlWriter.WriteStringAsync("WarehouseId", product.WarehouseId, await IgnoreExportProductPropertyAsync(p => p.Warehouse));
@@ -1350,6 +1351,10 @@ namespace Nop.Services.ExportImport
                 new PropertyByName<Product>("ManageInventoryMethod", p => p.ManageInventoryMethodId)
                 {
                     DropDownElements = await ManageInventoryMethod.DontManageStock.ToSelectListAsync(useLocalization: false)
+                },
+                new PropertyByName<Product>("ManageInventoryType", p => p.ManageProductTypeId)
+                {
+                    DropDownElements = await ManageProductType.ManageMeters.ToSelectListAsync(useLocalization: false)
                 },
                 new PropertyByName<Product>("ProductAvailabilityRange", p => p.ProductAvailabilityRangeId, await IgnoreExportProductPropertyAsync(p => p.ProductAvailabilityRange))
                 {

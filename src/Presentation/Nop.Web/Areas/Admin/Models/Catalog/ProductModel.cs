@@ -240,6 +240,9 @@ namespace Nop.Web.Areas.Admin.Models.Catalog
         [NopResourceDisplayName("Admin.Catalog.Products.Fields.ManageInventoryMethod")]
         public int ManageInventoryMethodId { get; set; }
 
+        [NopResourceDisplayName("Admin.Catalog.Products.Fields.ManageProductType")]
+        public int ManageProductTypeId { get; set; }
+
         [NopResourceDisplayName("Admin.Catalog.Products.Fields.ProductAvailabilityRange")]
         public int ProductAvailabilityRangeId { get; set; }
         public IList<SelectListItem> AvailableProductAvailabilityRanges { get; set; }

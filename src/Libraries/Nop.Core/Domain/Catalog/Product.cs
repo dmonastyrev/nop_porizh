@@ -291,6 +291,11 @@ namespace Nop.Core.Domain.Catalog
         public int ManageInventoryMethodId { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating how to manage product type
+        /// </summary>
+        public int ManageProductTypeId { get; set; }
+
+        /// <summary>
         /// Gets or sets a product availability range identifier
         /// </summary>
         public int ProductAvailabilityRangeId { get; set; }
@@ -593,6 +598,15 @@ namespace Nop.Core.Domain.Catalog
         {
             get => (ManageInventoryMethod)ManageInventoryMethodId;
             set => ManageInventoryMethodId = (int)value;
+        }
+
+        /// <summary>
+        /// Gets or sets the value indicating how to manage inventory
+        /// </summary>
+        public ManageProductType ManageProductType
+        {
+            get => (ManageProductType)ManageProductTypeId;
+            set => ManageProductTypeId = (int)value;
         }
 
         /// <summary>

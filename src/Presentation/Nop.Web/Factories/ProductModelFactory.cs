@@ -773,6 +773,9 @@ namespace Nop.Web.Factories
             //rental
             model.IsRental = product.IsRental;
 
+            // manage product type for valid quantity selector
+            model.ManageProductType = product.ManageProductType;
+
             //customer entered price
             model.CustomerEntersPrice = product.CustomerEntersPrice;
             if (!model.CustomerEntersPrice)
@@ -1340,6 +1343,7 @@ namespace Nop.Web.Factories
                 ShowGtin = _catalogSettings.ShowGtin,
                 Gtin = product.Gtin,
                 ManageInventoryMethod = product.ManageInventoryMethod,
+                ManageProductType = product.ManageProductType,
                 StockAvailability = await _productService.FormatStockMessageAsync(product, string.Empty),
                 HasSampleDownload = product.IsDownload && product.HasSampleDownload,
                 DisplayDiscontinuedMessage = !product.Published && _catalogSettings.DisplayDiscontinuedMessageForUnpublishedProducts,

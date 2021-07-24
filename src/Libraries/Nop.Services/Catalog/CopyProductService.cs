@@ -677,6 +677,7 @@ namespace Nop.Services.Catalog
                 IsTelecommunicationsOrBroadcastingOrElectronicServices =
                     product.IsTelecommunicationsOrBroadcastingOrElectronicServices,
                 ManageInventoryMethod = product.ManageInventoryMethod,
+                ManageProductType = product.ManageProductType,
                 ProductAvailabilityRangeId = product.ProductAvailabilityRangeId,
                 UseMultipleWarehouses = product.UseMultipleWarehouses,
                 WarehouseId = product.WarehouseId,

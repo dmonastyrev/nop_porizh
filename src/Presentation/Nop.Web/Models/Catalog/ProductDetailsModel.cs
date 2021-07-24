@@ -77,6 +77,8 @@ namespace Nop.Web.Models.Catalog
 
         public ManageInventoryMethod ManageInventoryMethod { get; set; }
 
+        public ManageProductType ManageProductType { get; set; }
+
         public string StockAvailability { get; set; }
 
         public bool DisplayBackInStockSubscription { get; set; }
@@ -168,6 +170,8 @@ namespace Nop.Web.Models.Catalog
             //updating existing shopping cart or wishlist item?
             public int UpdatedShoppingCartItemId { get; set; }
             public ShoppingCartType? UpdateShoppingCartItemType { get; set; }
+
+            public ManageProductType ManageProductType { get; set; }
         }
 
         public partial record ProductPriceModel : BaseNopModel
