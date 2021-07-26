@@ -89,6 +89,8 @@ namespace Nop.Web.Models.ShoppingCart
             public bool DisableRemoval { get; set; }
 
             public IList<string> Warnings { get; set; }
+
+            public ManageProductType ManageProductType { get; set; }
         }
 
         public partial record CheckoutAttributeModel : BaseNopEntityModel

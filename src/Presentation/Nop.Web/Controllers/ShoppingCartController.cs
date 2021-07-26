@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -1171,14 +1172,23 @@ namespace Nop.Web.Controllers
             var products = (await _productService.GetProductsByIdsAsync(cart.Select(item => item.ProductId).Distinct().ToArray()))
                 .ToDictionary(item => item.Id, item => item);
 
-            //get order items with changed quantity
-            var itemsWithNewQuantity = cart.Select(item => new
+            var itemsWithNewQuantity = cart.Select(item =>
             {
-                //try to get a new quantity for the item, set 0 for items to remove
-                NewQuantity = itemIdsToRemove.Contains(item.Id) ? 0 : int.TryParse(form[$"itemquantity{item.Id}"], out var quantity) ? quantity : item.Quantity,
-                Item = item,
-                Product = products.ContainsKey(item.ProductId) ? products[item.ProductId] : null
-            }).Where(item => item.NewQuantity != item.Item.Quantity);
+                var separator = CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+                var newValue = form[$"itemquantity{item.Id}"].ToString();
+                newValue = newValue.Replace(",", separator).Replace(".", separator);
+
+                var result = new
+                {
+                    NewQuantity = itemIdsToRemove.Contains(item.Id)
+                        ? 0M
+                        : decimal.TryParse(newValue, out var quantity) ? quantity : item.Quantity,
+                    Item = item,
+                    Product = products.ContainsKey(item.ProductId) ? products[item.ProductId] : null
+                };
+
+                return result;
+            }).Where(item => item.NewQuantity != item.Item.Quantity).ToList();
 
             //order cart items
             //first should be items with a reduced quantity and that require other products; or items with an increased quantity and are required for other products
