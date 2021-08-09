@@ -424,13 +424,15 @@
 
 <script type="text/javascript" asp-location="Footer">
     function IncreaseQuantity(e, productType) {
-        var id = document.getElementById(e).value;
+        var val = document.getElementById(e).value;
+        val = val.replace(",", ".");
+
         if (productType == "ManageMeters") {
-            var qtyValue = parseFloat(id);
+            var qtyValue = parseFloat(val);
             qtyValue = qtyValue + 0.1;
         }
         else {
-            var qtyValue = parseInt(id);
+            var qtyValue = parseInt(val);
             qtyValue = qtyValue + 1;
         }
 
@@ -438,12 +440,14 @@
             qtyValue = 1000;
 
         document.getElementById(e).value = qtyValue.toFixed(2);
-        postCartForm(document.getElementById(e));
-        return true;
+        $(this).on('click', debounce(function (evt) {
+            postCartForm(evt);
+        }, 500));
     }
 
     function DecreaseQuantity(e, productType) {
         var val = document.getElementById(e).value;
+        val = val.replace(",", ".");
 
         if (val <= 0)
             return 0;
@@ -458,12 +462,15 @@
         }
 
         document.getElementById(e).value = qtyValue.toFixed(2);
-        postCartForm(document.getElementById(e));
-        return true;
+        $(this).on('click', debounce(function (evt) {
+            postCartForm(evt);
+        }, 500));
     }
 
     function ValidateValue(e, productType) {
         var val = document.getElementById(e).value;
+        val = val.replace(",", ".");
+
         if (productType == "ManageMeters") {
             var qtyValue = parseFloat(val);
         }
@@ -475,7 +482,9 @@
             qtyValue = 1000;
 
         document.getElementById(e).value = qtyValue.toFixed(2);
-        postCartForm(document.getElementById(e));
+        $(this).on('click', debounce(function (evt) {
+            postCartForm(evt);
+        }, 500));
     }
 
     function postCartForm(evt) {
@@ -488,5 +497,13 @@
                 $("body").html(data.replace(regex, ''));
             });
         }
+    }
+
+    function debounce(func, timeout = 300) {
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => { func.apply(this, args); }, timeout);
+        };
     }
 </script>
